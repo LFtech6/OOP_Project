@@ -7,4 +7,12 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <EditorConfigFiles Remove="C:\Users\LOPES\Desktop\IPCA\2º Ano\POO\ProjetoPOO\ProjetoPOO\.editorconfig" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="C:\Users\LOPES\Desktop\IPCA\2º Ano\POO\ProjetoPOO\ProjetoPOO\.editorconfig" />
+  </ItemGroup>
+
 </Project>

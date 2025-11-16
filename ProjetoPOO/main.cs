@@ -3,7 +3,7 @@
 // Author: Rodrigo Lopes Ferreira
 // Date:    {11/09/2025}
 // Project: {Gestão de Condomínios}
-// File:    {program.cs}
+// File:    {main.cs}
 //
 // Description:
 //   {Projeto sobre gestão de condomínios em C#}
@@ -17,9 +17,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProjetoPOO
+namespace EmpGestCondominios;
+
+public class Program
 {
-    class Program
-    {
+    static void Main(string[] args)
+        {
+        Console.WriteLine("Enter username:");
+        string userName = Console.ReadLine();
+        Console.WriteLine("Username is: " + userName);
     }
 }

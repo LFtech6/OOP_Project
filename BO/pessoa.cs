@@ -14,12 +14,13 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Classe abstrata que representa uma pessoa genérica do sistema.
     /// </summary>
-    abstract class Pessoa
+    [Serializable]
+    public abstract class Pessoa
     {
         #region Attributes
         string nome;

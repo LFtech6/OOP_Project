@@ -14,16 +14,17 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Classe que representa um condómino (proprietário).
     /// </summary>
-    class Condomino : Pessoa
+    [Serializable]
+    public class Condomino : Pessoa
     {
         #region Attributes
         string moradaNotificacao;
-        Fraccao identificacao;
+        Fraccao idFraccao;
         int piso;
         float permilagem;
         #endregion
@@ -41,10 +42,10 @@ namespace EmpGestCondominios
         /// <summary>
         /// Fração a que o condómino pertence.
         /// </summary>
-        public Fraccao Identificacao
+        public Fraccao IdFraccao
         {
-            get { return identificacao; }
-            set { identificacao = value; }
+            get { return idFraccao; }
+            set { idFraccao = value; }
         }
 
         /// <summary>
@@ -72,15 +73,8 @@ namespace EmpGestCondominios
         /// </summary>
         public override int IdentificarPessoa()
         {
-            return 0;
-        }
-
-        /// <summary>
-        /// Método simples para criar um condómino.
-        /// </summary>
-        public int CriarCondomino()
-        {
-            return 0;
+            // Retorna o NIF como identificador único
+            return this.Nif;
         }
         #endregion
 
@@ -88,11 +82,11 @@ namespace EmpGestCondominios
         /// <summary>
         /// Construtor do condómino, inicializa todos os seus atributos.
         /// </summary>
-        public Condomino(string nome, int nif, string contacto, string moradaNotificacao, Fraccao identificacao, int piso, float permilagem)
+        public Condomino(string nome, int nif, string contacto, string moradaNotificacao, Fraccao idFraccao, int piso, float permilagem)
             : base(nome, nif, contacto)
         {
             this.moradaNotificacao = moradaNotificacao;
-            this.identificacao = identificacao;
+            this.idFraccao = idFraccao;
             this.piso = piso;
             this.permilagem = permilagem;
         }

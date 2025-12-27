@@ -13,12 +13,13 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Representa uma quota mensal associada a um condómino.
     /// </summary>
-    class Quota
+    [Serializable]
+    public class Quota
     {
         #region Attributes
         double valor;

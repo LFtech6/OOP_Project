@@ -14,19 +14,22 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Classe que representa um condomínio.
     /// Contém informação base e o conjunto de condóminos.
     /// </summary>
-    class Condominio
+    [Serializable]
+    public class Condominio
     {
         #region Attributes
         string nomeCondominio;
         string localizacao;
         string dataConstrucao;
-        Condomino[] proprietarios;
+        List<Condomino> proprietarios;
+        List<Fraccao> fracoes;
+        List<Despesa> despesas;
         #endregion
 
         #region Properties
@@ -60,10 +63,28 @@ namespace EmpGestCondominios
         /// <summary>
         /// Lista de proprietários das frações.
         /// </summary>
-        public Condomino[] Proprietarios
+        public List<Condomino> Proprietarios
         {
             get { return proprietarios; }
             set { proprietarios = value; }
+        }
+
+        /// <summary>
+        /// Lista das frações.
+        /// </summary>
+        public List<Fraccao> Fracoes
+        {
+            get { return fracoes; }
+            set { fracoes = value; }
+        }
+
+        /// <summary>
+        /// Lista das despesas.
+        /// </summary>
+        public List<Despesa> Despesas
+        {
+            get { return despesas; }
+            set { despesas = value; }
         }
         #endregion
 

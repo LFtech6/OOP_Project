@@ -14,15 +14,16 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Representa uma fração do condomínio.
     /// </summary>
-    class Fraccao
+    [Serializable]
+    public class Fraccao
     {
         #region Attributes
-        string identificacao;
+        int idFraccao;
         float area;
         Condomino proprietario;
         #endregion
@@ -31,10 +32,10 @@ namespace EmpGestCondominios
         /// <summary>
         /// Identificação da fração (ex.: A1, B2).
         /// </summary>
-        public string Identificacao
+        public int IdFraccao
         {
-            get { return identificacao; }
-            set { identificacao = value; }
+            get { return idFraccao; }
+            set { idFraccao = value; }
         }
 
         /// <summary>
@@ -70,9 +71,9 @@ namespace EmpGestCondominios
         /// <summary>
         /// Construtor que inicializa a fração.
         /// </summary>
-        public Fraccao(string identificacao, float area, Condomino proprietario)
+        public Fraccao(int idFraccao, float area, Condomino proprietario)
         {
-            this.identificacao = identificacao;
+            this.idFraccao = idFraccao;
             this.area = area;
             this.proprietario = proprietario;
         }

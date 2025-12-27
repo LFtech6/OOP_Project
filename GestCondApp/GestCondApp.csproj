@@ -8,11 +8,10 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <EditorConfigFiles Remove="C:\Users\LOPES\Desktop\IPCA\2º Ano\POO\ProjetoPOO\ProjetoPOO\.editorconfig" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="C:\Users\LOPES\Desktop\IPCA\2º Ano\POO\ProjetoPOO\ProjetoPOO\.editorconfig" />
+    <ProjectReference Include="..\BO\BO.csproj" />
+    <ProjectReference Include="..\Dados\Dados.csproj" />
+    <ProjectReference Include="..\Exceptions\Exceptions.csproj" />
+    <ProjectReference Include="..\Regras\Regras.csproj" />
   </ItemGroup>
 
 </Project>

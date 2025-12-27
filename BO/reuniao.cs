@@ -14,12 +14,13 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Representa uma reunião do condomínio.
     /// </summary>
-    class Reuniao
+    [Serializable]
+    public class Reuniao
     {
         #region Attributes
         string data;

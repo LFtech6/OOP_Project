@@ -13,12 +13,13 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Representa uma despesa efetuada pelo condomínio.
     /// </summary>
-    class Despesa
+    [Serializable]
+    public class Despesa
     {
         #region Attributes
         string descricao;

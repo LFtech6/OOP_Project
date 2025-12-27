@@ -13,7 +13,7 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     enum MetodoPagamento
     {
@@ -27,7 +27,8 @@ namespace EmpGestCondominios
     /// <summary>
     /// Representa o pagamento de uma quota.
     /// </summary>
-    class Pagamento
+    [Serializable]
+    public class Pagamento
     {
         #region Attributes
         double valorPago;

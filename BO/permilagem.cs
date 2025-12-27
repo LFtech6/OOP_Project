@@ -14,12 +14,13 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     /// <summary>
     /// Representa o cálculo de permilagem de uma fração.
     /// </summary>
-    class Permilagem
+    [Serializable]
+    public class Permilagem
     {
         #region Attributes
         double valorFracao;

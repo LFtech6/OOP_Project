@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BO/BO.csproj" Id="002c9ecf-d915-4afe-8a7e-35ac60890554" />
+  <Project Path="Dados/Dados.csproj" Id="36780b33-28df-4ab0-bfd0-19b0eb7a1427" />
+  <Project Path="Exceptions/Exceptions.csproj" Id="5df1c46d-9743-4633-9eeb-7868143f9978" />
+  <Project Path="GestCondApp/GestCondApp.csproj" Id="1c0065e1-079a-4622-9c5e-332dbd4be422" />
+  <Project Path="Regras/Regras.csproj" Id="29a46cf4-be2e-4cd3-ae61-eb4c169d3916" />
+</Solution>

@@ -14,7 +14,7 @@
 
 using System;
 
-namespace EmpGestCondominios
+namespace BO
 {
     enum TipoDocumento
     {
@@ -32,7 +32,8 @@ namespace EmpGestCondominios
     /// <summary>
     /// Representa um documento do condomínio.
     /// </summary>
-    class Documento
+    [Serializable]
+    public class Documento
     {
         #region Attributes
         string titulo;

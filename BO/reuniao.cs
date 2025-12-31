@@ -23,28 +23,48 @@ namespace BO
     public class Reuniao
     {
         #region Attributes
-        string data;
-        string ordemTrabalhos;
+        int idReuniao;
+        int idCondominio;
+        DateTime data;
+        string listaTemas;
         string local;
         #endregion
 
         #region Properties
         /// <summary>
+        /// Id da reunião.
+        /// </summary>
+        public int IdReuniao
+        {
+            get { return idReuniao; }
+            set { idReuniao = value; }
+        }
+
+        /// <summary>
+        /// Id do condomínio.
+        /// </summary>
+        public int IdCondominio
+        {
+            get { return idCondominio; }
+            set { idCondominio = value; }
+        }
+
+        /// <summary>
         /// Data da reunião.
         /// </summary>
-        public string Data
+        public DateTime Data
         {
             get { return data; }
             set { data = value; }
         }
 
         /// <summary>
-        /// Lista de temas a discutir na reunião.
+        /// Lista de temas a discutir na reunião por ordem de tema.
         /// </summary>
-        public string OrdemTrabalhos
+        public string ListaTemas
         {
-            get { return ordemTrabalhos; }
-            set { ordemTrabalhos = value; }
+            get { return listaTemas; }
+            set { listaTemas = value; }
         }
 
         /// <summary>
@@ -71,10 +91,12 @@ namespace BO
         /// <summary>
         /// Construtor da reunião.
         /// </summary>
-        public Reuniao(string data, string ordemTrabalhos, string local)
+        public Reuniao(int idReuniao, int idCondominio, DateTime data, string listaTemas, string local)
         {
+            this.idReuniao = idReuniao;
+            this.idCondominio = idCondominio;
             this.data = data;
-            this.ordemTrabalhos = ordemTrabalhos;
+            this.listaTemas = listaTemas;
             this.local = local;
         }
         #endregion

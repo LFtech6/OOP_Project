@@ -3,11 +3,11 @@
 // Author: Rodrigo Lopes Ferreira
 // Date:    {13/11/2025}
 // Project: {Gestão de Condomínios}
-// File:    {pessoa.cs}
+// File:    {morador.cs}
 //
 // Description:
-//   Classe abstrata que serve de base a todos os tipos de pessoas
-//   no sistema, fornecendo atributos comuns.
+//   Classe abstrata que serve de base para os tipos de
+//   morador no sistema, fornecendo atributos comuns.
 //
 // ============================================================
 #endregion
@@ -17,18 +17,19 @@ using System;
 namespace BO
 {
     /// <summary>
-    /// Classe abstrata que representa uma pessoa genérica do sistema.
+    /// Classe abstrata que representa um morador genérico do sistema.
     /// </summary>
     [Serializable]
-    public abstract class Pessoa
+    public abstract class Morador
     {
         #region Attributes
         string nome;
         int nif;
         string contacto;
+        int idCondominio;
         #endregion
 
-        #region Properties
+        #region 
         /// <summary>
         /// Nome da pessoa.
         /// </summary>
@@ -48,31 +49,41 @@ namespace BO
         }
 
         /// <summary>
-        /// Contacto telefónico da pessoa.
+        /// Contacto telefónico do morador.
         /// </summary>
         public string Contacto
         {
             get { return contacto; }
             set { contacto = value; }
         }
+
+        /// <summary>
+        /// Id do condomínio do morador.
+        /// </summary>
+        public int IdCondominio 
+        { 
+            get { return idCondominio; } 
+            set { idCondominio = value; } 
+        }
         #endregion
 
         #region Methods
         /// <summary>
-        /// Método abstrato para identificar a pessoa.
+        /// Método abstrato para identificar o morador.
         /// </summary>
-        public abstract int IdentificarPessoa();
+        public abstract int IdentificarMorador();
         #endregion
 
         #region Constructor
         /// <summary>
-        /// Construtor base para inicializar uma pessoa.
+        /// Construtor base para inicializar um morador.
         /// </summary>
-        public Pessoa(string nome, int nif, string contacto)
+        public Morador(string nome, int nif, string contacto, int idCondominio)
         {
             this.nome = nome;
             this.nif = nif;
             this.contacto = contacto;
+            this.idCondominio = idCondominio;
         }
         #endregion
     }

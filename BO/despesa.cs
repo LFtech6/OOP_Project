@@ -22,12 +22,32 @@ namespace BO
     public class Despesa
     {
         #region Attributes
+        int idDespesa;
+        int idCondominio;
         string descricao;
         double valor;
-        string data;
+        DateTime data;
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Id da despesa.
+        /// </summary>
+        public int IdDespesa
+        {
+            get { return idDespesa; }
+            set { idDespesa = value; }
+        }
+
+        /// <summary>
+        /// Condomínio que tem esta despesa.
+        /// </summary>
+        public int IdCondominio
+        {
+            get { return idCondominio; }
+            set { idCondominio = value; }
+        }
+
         /// <summary>
         /// Descrição da despesa.
         /// </summary>
@@ -49,7 +69,7 @@ namespace BO
         /// <summary>
         /// Data em que a despesa ocorreu.
         /// </summary>
-        public string Data
+        public DateTime Data
         {
             get { return data; }
             set { data = value; }
@@ -57,21 +77,16 @@ namespace BO
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Método placeholder para registar a despesa.
-        /// </summary>
-        public int RegistarDespesa()
-        {
-            return 0;
-        }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Construtor que inicializa a despesa.
         /// </summary>
-        public Despesa(string descricao, double valor, string data)
+        public Despesa(int idDespesa, int idCondominio, string descricao, double valor, DateTime data)
         {
+            this.idDespesa = idDespesa;
+            this.idCondominio = idCondominio;
             this.descricao = descricao;
             this.valor = valor;
             this.data = data;

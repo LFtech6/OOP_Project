@@ -4,4 +4,5 @@
   <Project Path="Exceptions/Exceptions.csproj" Id="5df1c46d-9743-4633-9eeb-7868143f9978" />
   <Project Path="GestCondApp/GestCondApp.csproj" Id="1c0065e1-079a-4622-9c5e-332dbd4be422" />
   <Project Path="Regras/Regras.csproj" Id="29a46cf4-be2e-4cd3-ae61-eb4c169d3916" />
+  <Project Path="TestesUnitários/TestesUnitários.csproj" Id="8dc5d629-49ab-4892-9ed2-7b7990aa50fc" />
 </Solution>

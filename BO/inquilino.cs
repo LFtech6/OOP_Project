@@ -18,15 +18,15 @@ namespace BO
 {
     /// <summary>
     /// Classe que representa um Inquilino.
-    /// Diferente do Condómino, o Inquilino não tem permilagem nem voto, mas tem um contrato de arrendamento.
+    /// Diferente do morador, o Inquilino não tem permilagem nem voto, mas tem um contrato de arrendamento.
     /// </summary>
     [Serializable]
-    public class Inquilino : Pessoa
+    public class Inquilino : Morador
     {
         #region Attributes
-        string dataInicioContrato;
+        DateTime dataInicioContrato;
         int duracaoMeses;
-        Fraccao idFraccao;
+        string idFraccao;
         #endregion
 
         #region Properties
@@ -34,7 +34,7 @@ namespace BO
         /// <summary>
         /// Data em que começou o contrato de arrendamento.
         /// </summary>
-        public string DataInicioContrato
+        public DateTime DataInicioContrato
         {
             get { return dataInicioContrato; }
             set { dataInicioContrato = value; }
@@ -52,7 +52,7 @@ namespace BO
         /// <summary>
         /// Identificação da fração onde o inquilino mora.
         /// </summary>
-        public Fraccao IdFraccao
+        public string IdFraccao
         {
             get { return idFraccao; }
             set { idFraccao = value; }
@@ -63,9 +63,9 @@ namespace BO
         #region Methods
 
         /// <summary>
-        /// Implementação do método abstrato da classe Pessoa.
+        /// Implementação do método abstrato da classe morador.
         /// </summary>
-        public override int IdentificarPessoa()
+        public override int IdentificarMorador()
         {
             // Retorna o NIF como identificador único
             return this.Nif;
@@ -85,10 +85,9 @@ namespace BO
 
         /// <summary>
         /// Construtor do Inquilino.
-        /// Recebe os dados da Pessoa (base) + os dados do Contrato.
         /// </summary>
-        public Inquilino(string nome, int nif, string contacto, string dataInicioContrato, int duracaoMeses, Fraccao idFraccao)
-            : base(nome, nif, contacto)
+        public Inquilino(string nome, int nif, string contacto, int idCondominio, DateTime dataInicioContrato, int duracaoMeses, string idFraccao)
+            : base(nome, nif, contacto, idCondominio)
         {
             this.dataInicioContrato = dataInicioContrato;
             this.duracaoMeses = duracaoMeses;

@@ -16,7 +16,10 @@ using System;
 
 namespace BO
 {
-    enum TipoDocumento
+    /// <summary>
+    /// Vários tipos de documentos.
+    /// </summary>
+    public enum TipoDocumento
     {
         Ata,
         Contrato,
@@ -36,14 +39,54 @@ namespace BO
     public class Documento
     {
         #region Attributes
+        int idDocumento;
+        int idCondominio;
+        int idReuniao;
+        int idDespesa;
         string titulo;
         string conteudo;
-        string dataCriacao;
+        DateTime dataCriacao;
         string autor;
         TipoDocumento tipo;
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Id do documento.
+        /// </summary>
+        public int IdDocumento
+        {
+            get { return idDocumento; }
+            set { idDocumento = value; }
+        }
+
+        /// <summary>
+        /// Id do condomínio.
+        /// </summary>
+        public int IdCondominio
+        {
+            get { return idCondominio; }
+            set { idCondominio = value; }
+        }
+
+        /// <summary>
+        /// Id da reunião.
+        /// </summary>
+        public int IdReuniao
+        {
+            get { return idReuniao; }
+            set { idReuniao = value; }
+        }
+
+        /// <summary>
+        /// Id da despesa.
+        /// </summary>
+        public int IdDespesa
+        {
+            get { return idDespesa; }
+            set { idDespesa = value; }
+        }
+
         /// <summary>
         /// Título do documento.
         /// </summary>
@@ -65,7 +108,7 @@ namespace BO
         /// <summary>
         /// Data de criação do documento.
         /// </summary>
-        public string DataCriacao
+        public DateTime DataCriacao
         {
             get { return dataCriacao; }
             set { dataCriacao = value; }
@@ -91,21 +134,18 @@ namespace BO
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Método placeholder para criação de documento.
-        /// </summary>
-        public int CriarDocumento()
-        {
-            return 0;
-        }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Construtor do documento.
         /// </summary>
-        public Documento(string titulo, string conteudo, string dataCriacao, string autor, TipoDocumento tipo)
+        public Documento(int idDocumento, int idCondominio, int idReuniao, int idDespesa, string titulo, string conteudo, DateTime dataCriacao, string autor, TipoDocumento tipo)
         {
+            this.idDocumento = idDocumento;
+            this.idCondominio = idCondominio;
+            this.idReuniao = idReuniao;
+            this.idDespesa = idDespesa;
             this.titulo = titulo;
             this.conteudo = conteudo;
             this.dataCriacao = dataCriacao;

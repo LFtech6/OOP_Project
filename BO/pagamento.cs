@@ -15,7 +15,7 @@ using System;
 
 namespace BO
 {
-    enum MetodoPagamento
+    public enum MetodoPagamento
     {
         Transferencia,
         Mbway,
@@ -31,12 +31,52 @@ namespace BO
     public class Pagamento
     {
         #region Attributes
+        int idPagamento;
+        int idCondominio;
+        int nifMorador;
+        int idDespesa;
         double valorPago;
-        string dataPagamento;
+        DateTime dataPagamento;
         MetodoPagamento metodo;
         #endregion
 
         #region Properties
+        /// <summary>
+        /// Id do pagamento.
+        /// </summary>
+        public int IdPagamento
+        {
+            get { return idPagamento; }
+            set { idPagamento = value; }
+        }
+
+        /// <summary>
+        /// Id do condomínio.
+        /// </summary>
+        public int IdCondominio
+        {
+            get { return idCondominio; }
+            set { idCondominio = value; }
+        }
+
+        /// <summary>
+        /// Nif do morador.
+        /// </summary>
+        public int NifMorador
+        {
+            get { return nifMorador; }
+            set { nifMorador = value; }
+        }
+
+        /// <summary>
+        /// Id da despesa.
+        /// </summary>
+        public int IdDespesa
+        {
+            get { return idDespesa; }
+            set { idDespesa = value; }
+        }
+
         /// <summary>
         /// Valor pago.
         /// </summary>
@@ -49,7 +89,7 @@ namespace BO
         /// <summary>
         /// Data do pagamento.
         /// </summary>
-        public string DataPagamento
+        public DateTime DataPagamento
         {
             get { return dataPagamento; }
             set { dataPagamento = value; }
@@ -76,11 +116,15 @@ namespace BO
         #endregion
 
         #region Constructor
-        /// <summary>
+        /// <summary> 
         /// Construtor que inicializa o pagamento.
         /// </summary>
-        public Pagamento(double valorPago, string dataPagamento, MetodoPagamento metodo)
+        public Pagamento(int idPagamento, int idCondominio, int nifMorador, int idDespesa, double valorPago, DateTime dataPagamento, MetodoPagamento metodo)
         {
+            this.idPagamento = idPagamento;
+            this.idCondominio = idCondominio;
+            this.nifMorador = nifMorador;
+            this.idDespesa = idDespesa;
             this.valorPago = valorPago;
             this.dataPagamento = dataPagamento;
             this.metodo = metodo;

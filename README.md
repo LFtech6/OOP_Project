@@ -1,103 +1,30 @@
-# Gestão de Condomínios — Fase 1  
-Projeto de Programação Orientada a Objetos (LESI – IPCA)  
-Autor: Rodrigo Lopes Ferreira — 13/11/2025
+Gestão de Condomínios
 
-## 📌 Descrição Geral
-Este projeto tem como objetivo desenvolver um sistema simples para a gestão de condomínios, permitindo a representação de entidades fundamentais como condóminos, frações, documentos, reuniões, quotas, pagamentos e despesas.
+Projeto de Programação Orientada a Objetos (LESI – IPCA)
+Autor: Rodrigo Lopes Ferreira
 
-Nesta Fase 1 foi realizada:
-- Identificação das classes principais do sistema  
-- Definição dos atributos essenciais  
-- Propriedades (get/set)  
-- Construtores  
-- Métodos base (placeholders, retorno 0)  
-- Uso de herança (classe abstrata `Pessoa`)  
-- Enumerações para categorização (métodos de pagamento, tipos de documentos)  
-- Estruturação do código segundo o modelo fornecido pelo docente  
+Este projeto consiste no desenvolvimento de um sistema de Gestão de Condomínios, aplicando os princípios da Programação Orientada a Objetos e uma arquitetura em camadas.
 
-Não há ainda implementação lógica — apenas estrutura.
+O sistema permite gerir condomínios, moradores (proprietários e inquilinos), frações, despesas, quotas, pagamentos, reuniões e documentos.
 
----
+Trabalho Desenvolvido
 
-## 🏗️ Estrutura das Classes (Fase 1)
+Fase 1: Análise do domínio e modelação das classes principais (BO)
 
-### **Pessoa (abstract)**
-Classe base para representar qualquer pessoa no sistema.  
-Atributos: nome, nif, contacto.  
-Método abstrato: `IdentificarPessoa()`.
+Fase 2: Implementação da arquitetura em camadas (BO, DL e RN), persistência em ficheiros, regras de negócio, exceções e testes unitários
 
-### **Condomino**
-Representa um proprietário de uma fração.  
-Herda de `Pessoa`.  
-Inclui: morada de notificação, fração, piso, permilagem.
+Destaques Técnicos
 
-### **Fraccao**
-Representa uma fração do edifício.  
-Inclui: identificação, área e proprietário.
+Herança e classes abstratas
 
-### **Condominio**
-Representa um condomínio.  
-Inclui: nome, localização, data de construção e lista de proprietários.
+Separação clara de responsabilidades (BO / DL / RN)
 
-### **Permilagem**
-Guarda os valores (fração e total do edifício) necessários ao cálculo da permilagem.
+Persistência de dados em ficheiros binários
 
-### **Quota**
-Representa uma quota mensal (valor, mês, ano).
+Regras de negócio isoladas
 
-### **Pagamento**
-Regista um pagamento de quota.  
-Usa o enum `MetodoPagamento`.
+Testes unitários básicos
 
-### **Despesa**
-Regista uma despesa do condomínio (descrição, valor, data).
+Documentação XML em todas as classes
 
-### **Reuniao**
-Representa uma reunião, com data, local e ordem de trabalhos.
-
-### **Documento**
-Representa documentos associados ao condomínio, como atas, contratos, comunicações, etc.  
-Usa o enum `TipoDocumento`.
-
----
-
-## 📚 Estruturas Usadas
-- Classes simples com atributos privados e propriedades públicas  
-- Herança (Pessoa → Condomino)  
-- Enumerações (`MetodoPagamento`, `TipoDocumento`)  
-- Arrays para armazenar coleções (ex.: `Condomino[]`)  
-- Métodos placeholder (retornam 0), como pedido para a Fase 1  
-
----
-
-## 🧩 Funcionalidades previstas para Fases futuras
-- Cálculo real da permilagem  
-- Registo e validação de pagamentos  
-- Gestão das quotas e despesas  
-- Listagem de proprietários e frações  
-- Gestão completa de reuniões e documentos  
-- Possível evolução para coleções dinâmicas (listas)  
-- Persistência de dados  
-
----
-
-## 📅 Estado da Fase 1
-✔ Todas as classes identificadas  
-✔ Estrutura de atributos, propriedades e construtores concluída  
-✔ Enumerações implementadas  
-✔ Métodos essenciais criados (placeholders)  
-✔ Documentação XML incluída  
-✔ Cumprimento dos requisitos da Fase 1  
-
----
-
-## 📎 Notas Finais
-A arquitetura foi desenvolvida tendo em conta:
-- a simplicidade exigida para a Fase 1  
-- o estilo do repositório base recomendado pelo docente  
-- coerência entre todas as classes  
-- facilidade de evolução para as fases seguintes  
-
-O código está preparado para receber a lógica na Fase 2.
-
----
+O projeto foi desenvolvido de acordo com as orientações do docente e encontra-se funcional e preparado para futuras extensões.

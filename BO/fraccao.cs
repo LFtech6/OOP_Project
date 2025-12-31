@@ -23,16 +23,17 @@ namespace BO
     public class Fraccao
     {
         #region Attributes
-        int idFraccao;
+        string idFraccao;
         float area;
-        Condomino proprietario;
+        int nifMorador;
+        int idCondominio;
         #endregion
 
         #region Properties
         /// <summary>
-        /// Identificação da fração (ex.: A1, B2).
+        /// Identificação da fracção (ex.: A1, B2).
         /// </summary>
-        public int IdFraccao
+        public string IdFraccao
         {
             get { return idFraccao; }
             set { idFraccao = value; }
@@ -48,34 +49,37 @@ namespace BO
         }
 
         /// <summary>
-        /// Proprietário da fração.
+        /// Proprietário da fracção.
         /// </summary>
-        public Condomino Proprietario
+        public int NifMorador
         {
-            get { return proprietario; }
-            set { proprietario = value; }
+            get { return nifMorador; }
+            set { nifMorador = value; }
+        }
+
+        /// <summary>
+        /// Condomínio a que pertence a fracção.
+        /// </summary>
+        public int IdCondominio 
+        { 
+            get { return idCondominio; } 
+            set { idCondominio = value; } 
         }
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Método placeholder para criar uma fração.
-        /// </summary>
-        public int CriarFraccao()
-        {
-            return 0;
-        }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Construtor que inicializa a fração.
         /// </summary>
-        public Fraccao(int idFraccao, float area, Condomino proprietario)
+        public Fraccao(string idFraccao, float area, int nifMorador, int idCondominio)
         {
             this.idFraccao = idFraccao;
             this.area = area;
-            this.proprietario = proprietario;
+            this.nifMorador = nifMorador;
+            this.idCondominio = idCondominio;
         }
         #endregion
     }

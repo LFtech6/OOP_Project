@@ -7,7 +7,7 @@
 //
 // Description:
 //   Permilagem = (Valor da Fração / Valor Total do Edifício) * 1000.
-//   Guarda os dados necessários ao cálculo.
+//   Guarda os dados necessários ao cálculo nas regras de negócio   .
 //
 // ============================================================
 #endregion
@@ -25,7 +25,7 @@ namespace BO
         #region Attributes
         double valorFracao;
         double valorTotalEdificio;
-        Fraccao identificacao;
+        string idFraccao;
         #endregion
 
         #region Properties
@@ -50,32 +50,25 @@ namespace BO
         /// <summary>
         /// Fração associada ao cálculo.
         /// </summary>
-        public Fraccao Identificacao
+        public string IdFraccao
         {
-            get { return identificacao; }
-            set { identificacao = value; }
+            get { return idFraccao; }
+            set { idFraccao = value; }
         }
         #endregion
 
         #region Methods
-        /// <summary>
-        /// Método placeholder para o cálculo da permilagem.
-        /// </summary>
-        public int CalcularPermilagem()
-        {
-            return 0;
-        }
         #endregion
 
         #region Constructor
         /// <summary>
         /// Construtor que inicializa os valores necessários ao cálculo.
         /// </summary>
-        public Permilagem(double valorFracao, double valorTotalEdificio, Fraccao identificacao)
+        public Permilagem(double valorFracao, double valorTotalEdificio, string idFraccao)
         {
             this.valorFracao = valorFracao;
             this.valorTotalEdificio = valorTotalEdificio;
-            this.identificacao = identificacao;
+            this.idFraccao = idFraccao;
         }
         #endregion
     }

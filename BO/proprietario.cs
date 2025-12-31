@@ -17,14 +17,14 @@ using System;
 namespace BO
 {
     /// <summary>
-    /// Classe que representa um condómino (proprietário).
+    /// Classe que representa um proprietário.
     /// </summary>
     [Serializable]
-    public class Condomino : Pessoa
+    public class Proprietario : Morador
     {
         #region Attributes
         string moradaNotificacao;
-        Fraccao idFraccao;
+        string idFraccao;
         int piso;
         float permilagem;
         #endregion
@@ -40,9 +40,9 @@ namespace BO
         }
 
         /// <summary>
-        /// Fração a que o condómino pertence.
+        /// Fração a que o morador pertence.
         /// </summary>
-        public Fraccao IdFraccao
+        public string IdFraccao
         {
             get { return idFraccao; }
             set { idFraccao = value; }
@@ -58,7 +58,7 @@ namespace BO
         }
 
         /// <summary>
-        /// Permilagem associada ao condómino.
+        /// Permilagem associada ao morador.
         /// </summary>
         public float Permilagem
         {
@@ -69,9 +69,9 @@ namespace BO
 
         #region Methods
         /// <summary>
-        /// Implementação simples para identificar o condómino.
+        /// Implementação simples para identificar o morador.
         /// </summary>
-        public override int IdentificarPessoa()
+        public override int IdentificarMorador()
         {
             // Retorna o NIF como identificador único
             return this.Nif;
@@ -80,10 +80,10 @@ namespace BO
 
         #region Constructor
         /// <summary>
-        /// Construtor do condómino, inicializa todos os seus atributos.
+        /// Construtor do proprietário, inicializa todos os seus atributos.
         /// </summary>
-        public Condomino(string nome, int nif, string contacto, string moradaNotificacao, Fraccao idFraccao, int piso, float permilagem)
-            : base(nome, nif, contacto)
+        public Proprietario(string nome, int nif, string contacto, int idCondominio, string moradaNotificacao, string idFraccao, int piso, float permilagem)
+            : base(nome, nif, contacto, idCondominio)
         {
             this.moradaNotificacao = moradaNotificacao;
             this.idFraccao = idFraccao;

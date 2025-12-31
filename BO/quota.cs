@@ -7,6 +7,8 @@
 //
 // Description:
 //   Representa uma quota mensal do condomínio.
+//   Classe de dados (BO), sem regras de negócio.
+//   As validações e cálculos são tratados na camada RN.
 //
 // ============================================================
 #endregion
@@ -16,31 +18,56 @@ using System;
 namespace BO
 {
     /// <summary>
-    /// Representa uma quota mensal associada a um condómino.
+    /// Representa uma quota mensal associada a um morador de um condomínio.
+    /// Esta classe contém apenas dados, sendo as regras de negócio
+    /// definidas na respetiva camada de Regras de Negócio (RN).
     /// </summary>
     [Serializable]
     public class Quota
     {
         #region Attributes
+        int idQuota;
+        int idCondominio;
+        int nifMorador;
+        int mes;
+        int ano;
         double valor;
-        string mes;
-        string ano;
+        bool paga;
         #endregion
 
         #region Properties
+
         /// <summary>
-        /// Valor da quota.
+        /// Identificador único da quota.
         /// </summary>
-        public double Valor
+        public int IdQuota
         {
-            get { return valor; }
-            set { valor = value; }
+            get { return idQuota; }
+            set { idQuota = value; }
+        }
+
+        /// <summary>
+        /// Identificador do condomínio ao qual a quota pertence.
+        /// </summary>
+        public int IdCondominio
+        {
+            get { return idCondominio; }
+            set { idCondominio = value; }
+        }
+
+        /// <summary>
+        /// Número de identificação fiscal do morador associado à quota.
+        /// </summary>
+        public int NifMorador
+        {
+            get { return nifMorador; }
+            set { nifMorador = value; }
         }
 
         /// <summary>
         /// Mês a que a quota se refere.
         /// </summary>
-        public string Mes
+        public int Mes
         {
             get { return mes; }
             set { mes = value; }
@@ -49,33 +76,49 @@ namespace BO
         /// <summary>
         /// Ano a que a quota se refere.
         /// </summary>
-        public string Ano
+        public int Ano
         {
             get { return ano; }
             set { ano = value; }
         }
-        #endregion
 
-        #region Methods
         /// <summary>
-        /// Método placeholder para registo da quota.
+        /// Valor monetário da quota.
         /// </summary>
-        public int RegistarQuota()
+        public double Valor
         {
-            return 0;
+            get { return valor; }
+            set { valor = value; }
         }
+
+        /// <summary>
+        /// Indica se a quota já foi paga.
+        /// </summary>
+        public bool Paga
+        {
+            get { return paga; }
+            set { paga = value; }
+        }
+
         #endregion
 
         #region Constructor
+
         /// <summary>
-        /// Construtor que inicializa a quota.
+        /// Construtor da classe Quota.
+        /// Inicializa todos os atributos da quota.
         /// </summary>
-        public Quota(double valor, string mes, string ano)
+        public Quota(int idQuota, int idCondominio, int nifMorador, int mes, int ano, double valor, bool paga = false)
         {
-            this.valor = valor;
+            this.idQuota = idQuota;
+            this.idCondominio = idCondominio;
+            this.nifMorador = nifMorador;
             this.mes = mes;
             this.ano = ano;
+            this.valor = valor;
+            this.paga = paga;
         }
+
         #endregion
     }
 }
